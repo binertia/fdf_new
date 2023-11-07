@@ -7,11 +7,15 @@ MLX_A		=	minilibx/libmlx.a
 CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror -Iincludes
 RM			=	rm -rf
-SRCS		=	fdf.c
+
+SRCS		=	fdf.c						\
+				get_map.c					\
+				list_utils.c				\
+				valid_add_color.c			\
 
 OBJS		=	$(SRCS:%.c=%.o)
 
-.PHONY:			all clean fclean re localclean bonus
+.PHONY:			all clean fclean re
 
 all:			$(NAME)
 

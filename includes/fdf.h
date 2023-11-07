@@ -14,6 +14,7 @@
 # define FDF_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <math.h>
@@ -22,5 +23,24 @@
 # include "../minilibx/mlx.h"
 
 # define FIXED_SCALE 16
+
+typedef	struct	s_max
+{
+	int				col;
+	int				row;
+	int				box_size;
+}		t_max;
+
+typedef	struct	s_node
+{
+	int				**set;
+	struct s_node	*next;
+}		t_node;
+
+t_node	*get_map(int fd, t_max *max);
+void ft_free_list(t_node **map);
+int is_valid_line(char *s, int i);
+void	add_color(char *s, int **num_arr, int col);
+void	ft_new_list_add_back(int **content, t_node **node);
 
 #endif
